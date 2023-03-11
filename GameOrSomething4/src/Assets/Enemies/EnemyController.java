@@ -34,9 +34,9 @@ public class EnemyController implements ActionListener {
         InitialPosition = enemy.getPosition();
         WalkingDistance = new Vec2(20, 0);
         UpdatedPosition = InitialPosition.add(WalkingDistance);
-        Run = new BodyImage("res/Enemy1/Run.gif", 19);
-        Attack = new BodyImage("res/Enemy1/Attack.gif", 19);
-        Death = new BodyImage("res/Enemy1/Death.gif", 19);
+        Run = new BodyImage("res/Enemy/Run.gif", 19);
+        Attack = new BodyImage("res/Enemy/Attack.gif", 19);
+        Death = new BodyImage("res/Enemy/Death.gif", 19);
         Offset = new Vec2(0, 1);
     }
 

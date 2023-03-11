@@ -8,28 +8,15 @@ import org.jbox2d.common.Vec2;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class PlayerController implements KeyListener, ActionListener {
-
-
-
-
+public class PlayerController implements KeyListener{
     private static float WALKING_SPEED = 16;
-
-    Timer timer;
      private Player player;
-     Collisions Cl = new Collisions(null,null);
-     int attack;
      boolean enemyKilled = false;
-    public boolean Attack, Left, Right, Idle, Sprint,onGround;
-
-    // private HashMap<Body, BodyImage> hiddenImages = null;
-
-
+    public boolean Attack, Left, Right, Sprint;
 
     public PlayerController(Player s){
         player = s;
         player.setGravityScale(9);
-        timer = new Timer(1000, this);
     }
 
 
@@ -62,7 +49,7 @@ public class PlayerController implements KeyListener, ActionListener {
            case KeyEvent.VK_W:
            case KeyEvent.VK_SPACE:
                player.stopWalking();
-               player.jump(30);
+               player.jump(32);
                break;
         }
        setPlayerMovement();
@@ -87,9 +74,6 @@ public class PlayerController implements KeyListener, ActionListener {
         setPlayerMovement();
 
     }
-    @Override
-    public void actionPerformed(ActionEvent e) {
-    }
 
     public void setPlayerMovement(){
         if(Attack == true && Right == true && Left == false){
@@ -102,7 +86,6 @@ public class PlayerController implements KeyListener, ActionListener {
                     player.SetAttack(true);
                     setEnemyKilled();
                 }
-
             }
         }
         else if(Attack == true && Left == true && Right == false){

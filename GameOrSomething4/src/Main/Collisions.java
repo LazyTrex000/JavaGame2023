@@ -2,6 +2,8 @@ package Main;
 
 import Assets.Enemies.Enemy;
 import Assets.Enemies.Projectile;
+import Assets.Interactables.InteractivePlatform;
+import Assets.Interactables.LevelBuilding;
 import Assets.Player.Player;
 import Assets.Interactables.markers;
 import city.cs.engine.CollisionEvent;
@@ -10,8 +12,6 @@ import city.cs.engine.CollisionListener;
 public class Collisions implements CollisionListener {
     private Player player;
     private Game game;
-    private Enemy Emy;
-    boolean Attack = false;
     private boolean nextLevel= false;
 
     @Override
@@ -28,12 +28,14 @@ public class Collisions implements CollisionListener {
                 e.getReportingBody().destroy();
             }
         }
+        else if(e.getOtherBody() instanceof InteractivePlatform){
+            e.getOtherBody().destroy();
+        }
     }
     public Collisions(Player p, Game g) {
         this.player = p;
         this.game = g;
     }
-
     public void setNextLevel(boolean n){
         this.nextLevel = n;
     }
@@ -43,9 +45,6 @@ public class Collisions implements CollisionListener {
     }
 
 
-public void setAttack(boolean attack){
-        this.Attack = attack;
-}
 }
 
 
