@@ -6,7 +6,6 @@ import city.cs.engine.BodyImage;
 import city.cs.engine.CollisionEvent;
 import city.cs.engine.CollisionListener;
 import org.jbox2d.common.Vec2;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
